@@ -1,9 +1,14 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom'
 import './CategoryItem.scss'
 
-const CategoryItem = ({name, imgUrl, size}) => {
+const CategoryItem = ({name, imgUrl, size, linkUrl, match, history}) => {
+    console.log(match)
     return (
-        <li className={`${size} category-item`}>
+        <li 
+            className={`${size} category-item`}
+            onClick={ () => history.push(`${linkUrl}`)}
+        >
             <div className="background-image"
                 style={{
                     backgroundImage: `url(${imgUrl})`
@@ -17,4 +22,4 @@ const CategoryItem = ({name, imgUrl, size}) => {
     )
 }
 
-export default CategoryItem
+export default withRouter(CategoryItem)

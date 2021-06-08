@@ -2,7 +2,8 @@ import React from 'react';
 import CategoryList from '../../components/categoryList/CategoryList';
 import './HomePage.scss'
 
-const HomePage = () => {
+const HomePage = (props) => {
+    console.log(props)
     return (
         <div className="homepage">
             <div className="container">

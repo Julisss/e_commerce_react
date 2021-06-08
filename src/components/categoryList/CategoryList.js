@@ -11,29 +11,34 @@ class CategoryList extends React.Component {
                 {
                     name: 'hats',
                     imgUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-                    id: 'qwe1'
+                    id: 'qwe1',
+                    linkUrl: 'hats'
                 },
                 {
                     name: 'men',
                     imgUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-                    id: 'qwe2'
+                    id: 'qwe2',
+                    linkUrl: 'men'
                 },
                 {
                     name: 'womens',
                     imgUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-                    id: 'qwe3'
+                    id: 'qwe3',
+                    linkUrl: 'womens'
                 },
                 {
                     name: 'sneakers',
                     imgUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
                     size: 'large',
-                    id: 'qwe4'
+                    id: 'qwe4',
+                    linkUrl: 'sneakers'
                 },
                 {
                     name: 'jackets',
                     imgUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
                     size: 'large',
-                    id: 'qwe5'
+                    id: 'qwe5',
+                    linkUrl: 'jackets'
                 },
             ]
         }
@@ -42,9 +47,9 @@ class CategoryList extends React.Component {
     render() {
         return (
             <ul className="category-list">
-                {this.state.categories.map( ({name, imgUrl, id, size}) => {
+                {this.state.categories.map( ({id, ...otherSectionParam}) => {
                     return (
-                        <CategoryItem name={name} imgUrl={imgUrl} key={id} size={size} />
+                        <CategoryItem key={id} {...otherSectionParam}/>
                     )
                 })}
             </ul>
